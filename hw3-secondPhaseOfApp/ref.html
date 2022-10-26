@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0">
+  <title>Utpal Patel | Get Referal</title>
+  <link rel="stylesheet" type="text/css" href="patel-utpal_hw2-firstApp.css">
+  <link rel="stylesheet" type="text/css" href="ref.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <style>
+  	.f1 {
+	  width: 80%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  box-sizing: border-box;
+	  border: none;
+	  border-bottom: 2px solid;
+  </style>
+</head>
+<body>
+	<div class="info">
+		<div class="nav-bar">
+			<ul>
+				<li><a href="patel-utpal_hw2-firstApp.html"><span>Home<span></a></li>
+				<li><a href="about.html"><span>About Me</span></a></li>
+				<li><a href="workexp.html"><span>Work Experience</span></a></li>
+				<li><a href="UtpalResume1.pdf" target="#blank"><span>MyResume</span></a></li>
+			</ul>
+		</div>
+
+
+		<div class="your-info-div">
+			<div class="form-1">
+				<center>
+					<form but>
+					<fieldset style="width: 60%;">
+						<legend>Your Personal info:	</legend>
+						<br/>
+						<label for="fname">Upload Resume: </label>
+					  	<input class="f1" type="file" id="uploader" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+					  	<br/><br/>
+
+						<label for="fname">First Name: </label>
+					  	<input class="f1" type="text" id="fname" name="fname">
+					  	<br/><br/>
+
+					  	<label for="lname">Last Name: </label>
+					  	<input class="f1" type="text" id="lname" name="lname">
+					  	<br/><br/>
+
+					  	<label for="degree">Education degree: </label>
+					  	<input class="f1" type="text" id="degree" name="degree">
+					  	<br/><br/>
+
+					  	<label for="phone">Phone Number: </label>
+					  	<input class="f1" type="text" id="phone" name="phone">
+					  	<br/><br/>
+
+					  	<label for="email">Email Id: </label>
+					  	<input class="f1" type="text" id="email" name="email">
+					  	<br/><br/>
+
+					  	<label for="nativeloc">Gender: </label>
+					  	<input type="radio" id="male" name="gender" value="male">
+						<label for="male">Male</label>
+						<input type="radio" id="female" name="gender" value="female">
+						<label for="female">Female</label>
+					  	<br/><br/>
+
+						<label for="bod">Birth Date: </label>
+					  	<input class="f1" type="date" id="bod" name="bod">
+					  	<br/><br/>
+
+					  	<label for="birthplace">Birth Place: </label>
+					  	<input class="f1" type="text" id="birthplace" name="birthplace">
+					  	<br/><br/>
+
+					  	<label for="currentloc">Where do you live: </label>
+					  	<input class="f1" type="text" id="currentloc" name="currentloc">
+					  	<br/><br/>
+
+					  	<label for="futureloc">Where you would like to live: </label>
+					  	<input class="f1" style="width: 58%;" type="text" id="futureloc" name="futureloc">
+					  	<br/><br/>
+
+					  	<label for="nosibling">Number of Siblings: </label>
+					  	<input class="f1" type="Number" id="nosibling" name="nosibling">
+					  	<br/><br/>
+
+					  	<label for="hobbies">Hobbies: </label>
+					  	<select id="hobbies" name="hobbies">
+						  <option value="Drawing">Drawing</option>
+						  <option value="Dancing">Dancing</option>
+						  <option value="Tracking">Tracking</option>
+						  <option value="Cricket">Cricket</option>
+						</select>
+					  	<br/><br/>
+					</form>
+				</fieldset>
+				<br/><br/>
+				<button type="button" style="width: 75px; height: 30px; color: white; background-color: #f9004d;" name="submit" id="btn-submit-form1" value="submit">Submit</button>
+				</center>
+			</div>
+		</div>
+
+		
+		<hr style="width: 96%; margin: 2%;">
+		<div class="social-media">
+			<ul class="social-media-icons">
+				<li><a href="https://www.linkedin.com/in/utpalpatel0055/"><i class="fa fa-linkedin-square fa-fw fa-2x" aria-hidden="true" style="color: #f9004d;"></i></a></li>
+				<li><a href="https://github.com/UtpalPatel0055/COMP5130f2022"><i class="fa fa-github-square fa-fw fa-2x" aria-hidden="true"></i></a></li>
+				<li><a href="https://www.instagram.com/utpalpatel_0055/"><i class="fa fa-instagram fa-fw fa-2x" aria-hidden="true"></i></a></li>
+				<li><a href="https://www.facebook.com/patel.utpal.393950/"><i class="fa fa-facebook-official fa-fw fa-2x" aria-hidden="true"></i></a></li>
+			</ul>
+			<br/>
+		</div>
+	</div>
+</body>
+<script>
+	
+
+	const btn = document.getElementById("btn-submit-form1");
+    btn.addEventListener("click", (e) => {
+    let fname = document.getElementById("fname").value;
+    let lastname = document.getElementById("lname").value;
+    let degree = document.getElementById("degree").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let gender = document.getElementById("gender").value;
+    let bod = document.getElementById("bod").value;
+    let birthplace = document.getElementById("birthplace").value;
+    let currentloc = document.getElementById("currentloc").value;
+    let futureloc = document.getElementById("futureloc").value;
+    let noofsib = document.getElementById("nosibling").value;
+    let hobbies = document.getElementById("hobbies").value;
+
+    var url = "http://utpalpatel0055.pythonanywhere.com/a";
+	fetch(url, {
+		method: 'POST',
+		mode: 'cors',
+		headers: {
+			'Content-Type':'application/json'
+		},
+		body: JSON.stringify({
+			"fname":fname,
+			"lname":lastname,
+			"degree":degree,
+			"phone":phone,
+			"email":email,
+			"gender":gender,
+			"bod":bod,
+			"birthplace":birthplace,
+			"currentloc":currentloc,
+			"futureloc":futureloc,
+			"noofsib":noofsib,
+			"hobbies":hobbies
+
+			})
+	}).then(re=>re.json())
+    })
+
+    
+    //et othercol = document.getElementById("").value;
+</script>
+</html>
