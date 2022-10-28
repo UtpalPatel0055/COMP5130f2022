@@ -21,7 +21,7 @@
 	<div class="info">
 		<div class="nav-bar">
 			<ul>
-				<li><a href="patel-utpal_hw2-firstApp.html"><span>Home<span></a></li>
+				<li><a href="patel-utpal_hw3_secondPhaseOfApp.html"><span>Home<span></a></li>
 				<li><a href="about.html"><span>About Me</span></a></li>
 				<li><a href="workexp.html"><span>Work Experience</span></a></li>
 				<li><a href="UtpalResume1.pdf" target="#blank"><span>MyResume</span></a></li>
@@ -61,10 +61,10 @@
 					  	<br/><br/>
 
 					  	<label for="nativeloc">Gender: </label>
-					  	<input type="radio" id="male" name="gender" value="male">
-						<label for="male">Male</label>
-						<input type="radio" id="female" name="gender" value="female">
-						<label for="female">Female</label>
+					  	<select id="gender" name="gender">
+						  <option value="Male">Male</option>
+						  <option value="Female">Female</option>
+						</select>
 					  	<br/><br/>
 
 						<label for="bod">Birth Date: </label>
@@ -117,11 +117,9 @@
 	</div>
 </body>
 <script>
-	
-
 	const btn = document.getElementById("btn-submit-form1");
     btn.addEventListener("click", (e) => {
-    let fname = document.getElementById("fname").value;
+    let firstname = document.getElementById("fname").value;
     let lastname = document.getElementById("lname").value;
     let degree = document.getElementById("degree").value;
     let phone = document.getElementById("phone").value;
@@ -133,33 +131,39 @@
     let futureloc = document.getElementById("futureloc").value;
     let noofsib = document.getElementById("nosibling").value;
     let hobbies = document.getElementById("hobbies").value;
-
+    console.log(firstname,lastname,degree,phone,email,gender);
+    console.log(bod,birthplace,currentloc,futureloc,noofsib,hobbies);
     var url = "http://utpalpatel0055.pythonanywhere.com/a";
-	fetch(url, {
-		method: 'POST',
-		mode: 'cors',
-		headers: {
-			'Content-Type':'application/json'
-		},
-		body: JSON.stringify({
-			"fname":fname,
-			"lname":lastname,
-			"degree":degree,
-			"phone":phone,
-			"email":email,
-			"gender":gender,
-			"bod":bod,
-			"birthplace":birthplace,
-			"currentloc":currentloc,
-			"futureloc":futureloc,
-			"noofsib":noofsib,
-			"hobbies":hobbies
 
-			})
-	}).then(re=>re.json())
-    })
+    fetch(url,{
+    	method: 'POST',
+    	mode: 'cors',
+    	headers: {
+    		"Content-Type": 'application/json'
+    	},
+    	body: JSON.stringify({
+    		firstname : firstname,
+	    	lastname : lastname,
+		    degree : degree,
+		    phone : phone,
+		    email : email,
+		    gender : gender,
+		    bod : bod,
+		    birthplace : birthplace,
+		    currentloc : currentloc,
+		    futureloc : futureloc,
+		    noofsib : noofsib,
+		    hobbies:hobbies
+    	})
+    }).then(res => res.json())
+    	.then((data)=>{
+    		if(data.status){
+    			alert(data.message)
+    		}
+    	})
+    	.catch(err=>console.log(err))
 
-    
-    //et othercol = document.getElementById("").value;
+})
+	
 </script>
 </html>
