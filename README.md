@@ -1,8 +1,8 @@
-                                                            ---------------------
-                                                            ---------------------
-                                                            ### COMP5130f2022 ###
-                                                            ---------------------
-                                                            ---------------------
+                                                        ---------------------
+                                                        ---------------------
+                                                        ### COMP5130f2022 ###
+                                                        ---------------------
+                                                        ---------------------
 
 ### Functionality of the project ###
 Our project mainly contains two main modules:
@@ -44,9 +44,11 @@ Technologies:
 
 2. Python 
 - try 'python -version' or 'python -v' in terminal/command prompt to check whether Python is installed or not?
-- if it is not installed, please visit https://nodejs.org/en/download/ and download the node js as per your OS.
-- After successful installation of node js, please open our folder and hit 'npm update' to make sure the correct version of node js
-- Finally, write 'npm start'. It should the server (localhost) on 3000 port
+- if it is not installed, please visit https://www.python.org/downloads/ and download the node js as per your OS.
+- After successful installation of python, please type 'pip install -r requirements.txt' to cope up with the version of our project.
+- The reason for this commnad is, we have requirements.txt in the project which specifies the version of different libraries so it will install those libraries with the specified version written in requirements.txt
+- Now, open the backend folder in cmd/terminal and hit venv\scripts\activate in the windows and venv/bin/activate in the MacOS
+- Finally, enter command 'flask run' to start the backend
 
 
 ### Our project on server ###
