@@ -7,7 +7,7 @@
 ### Functionality of the project ###
 Our project mainly contains two main modules:
 1. Recruiter
-2. Candiate
+2. Candidate
 
 Recruiter will perform following activities:
 - Create Assessment
